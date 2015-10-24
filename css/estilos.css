@@ -1,0 +1,319 @@
+.baraci-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.boxedcontainer     {   max-width: 1170px; margin:auto; padding:0px 30px;}
+
+/*********************************************
+    -   SETTINGS FOR BANNER CONTAINERS  -
+**********************************************/
+
+.tp-banner-container{
+    width:100%;
+    position:relative;
+    padding:0;
+
+}
+
+.tp-banner{
+    width:100%;
+    position:relative;
+}
+
+.tp-banner-fullscreen-container {
+        width:100%;
+        position:relative;
+        padding:0;
+}
+
+/*******************************************************************/
+.toolpad * {
+     -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}
+
+
+/***********************
+    -   BASICS  -
+***********************/
+ h2             {   color:#000; font-size:17px; font-weight:700; margin-bottom:20px;}
+ h2.redtitle    {   padding:9px 20px; width:100%; background:#e33a0c; color:#fff;  box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;
+                    margin-bottom:40px;
+ }
+
+ h2.nobottommargin  {   margin-bottom:0px;}
+ .container     {   max-width:1170px;margin:auto;   }
+ .clear         {   clear:both;}
+ .float-left    {   float:left;}
+ .float-right   {   float:right;}
+ .divide40      {   width:100%; height:40px;}
+ .mb30          {   margin-bottom:30px;}
+ .mlb30         {   margin-left:30px; margin-bottom:30px;}
+ .mrb30         {   margin-right:30px; margin-bottom:30px;}
+
+ .table         {   display:table; padding-bottom:35px;}
+ .table.nbp     {   padding-bottom:0px;}
+ .table-cell    {   display: table-cell; vertical-align: top; }
+ .table-cell img{   width: 220px; }
+
+ .lp30          {   padding-left:30px;}
+ .rp30          {   padding-right:30px;}
+
+ hr             {   border:none; border-top:2px solid #eee; margin:0px 0px 40px;}
+ .boxed-content hr {    border:none; border-top:2px solid #eee; margin:0px -40px 40px;}
+ hr.nohormargin {   margin: -1px -1px 40px 0px}
+ .one_third     {   width:32%; margin-right:1%; float:left;}
+ .one_third.last{   margin-right:0;}
+
+ /*a,a:visited  {   color:#e33a0c}*/
+ a:hover        {   text-decoration: none;}
+
+.prevnext       {   width:615px;height:23px;position: fixed; left:50%; margin-left:-272px;top:-2px;z-index:1000;
+
+}
+
+.prevnext a     {   background:#e33a0c;font-size:10px; text-decoration: none !important;  color:#fff !important;
+                    margin-right:2px;padding:3px 8px; border-radius:0px 0px 5px 5px; -moz-border-radius:0px 0px 5px 5px;-webkit-border-radius:0px 0px 5px 5px;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                    filter: alpha(opacity=50);
+                    -moz-opacity: 0.5;
+                    -khtml-opacity: 0.5;
+                    opacity: 0.5;
+}
+.prevnext a.active,
+.prevnext a:hover,
+.prevnext a:hover * {   color:#fff !important;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                      filter: alpha(opacity=100);
+                      -moz-opacity: 1;
+                      -khtml-opacity: 1;
+                      opacity: 1;
+                     }
+
+input[type="button"] { background-color:#3498db; border:none; color:#fff; padding:7px 10px; cursor:pointer; display: inline-block; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; }
+input[type="button"]:hover  { background-color:#2980b9; border:none; color:#fff; padding:7px 10px;}
+
+h2.changecolor  {   color:#E33A0C;}
+
+h2.results      {   -webkit-transition: all 0.2s ease-out;
+                    -moz-transition: all 0.2s ease-out;
+                    -o-transition: all 0.2s ease-out;
+                    -ms-transition: all 0.2s ease-out; }
+/******************************
+    -   HEADER  -
+********************************/
+
+
+
+  /*header      {   width:100%; padding:20px 0px 17px 0px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}*/
+  .content      {   width:100%; padding:0px 30px 0px 30px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+
+
+ .logo-container    {   float:left; width:50%;}
+ .logo              {   background:url(../images/logo.png); background-size:100%; background-position: center center; background-repeat:no-repeat;max-width:406px; min-width:340px;height:60px; }
+
+  .button-holder .button,
+  .button-holder .button:hover,
+  .button-holder .button:visited {
+    float: right;
+    background-color: #E33A0C;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    }
+
+/******************************
+    -   CONTAINER   -
+********************************/
+/*.container        {   max-width:1170px; padding:30px;}*/
+/******************************
+    -   PRE -
+********************************/
+
+
+pre             {   font-size:12px; font-family: 'Open Sans', sans-serif; color:#888; line-height:16px; background:url(../editor/assets/prebg.png) repeat; padding:16px; padding-bottom:15px;}
+pre .linedark   {   background:#888}
+pre span        {   font-weight:700}
+pre strong      {   color:#555;font-weight:800}
+
+h3              {   font-size:14px; color:#e33a0c; line-height:20px;}
+/***********************************************************************************************************************************************************************************************************/
+.tp-bannertimer {
+    background:#777 !important;
+    background:rgba(0,0,0,0.1) !important;
+    height:5px !important;
+  }
+
+
+
+.tp-bullets.simplebullets.navbar {
+
+    height: 35px;
+    padding: 0px 0px;
+
+}
+.tp-bullets.simplebullets .bullet {
+    cursor: pointer;
+    position: relative !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 6px !important;
+    height: 6px !important;
+    border: 5px solid rgba(0, 0, 0, 0) !important;
+    display: inline-block;
+    margin-right: 2px !important;
+    margin-bottom: 14px !important;
+    -webkit-transition: background-color 0.2s, border-color 0.2s;
+    -moz-transition: background-color 0.2s, border-color 0.2s;
+    -o-transition: background-color 0.2s, border-color 0.2s;
+    -ms-transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s;
+    float:none !important;
+}
+.tp-bullets.simplebullets .bullet.last {
+    margin-right: 0px
+}
+.tp-bullets.simplebullets .bullet:hover,
+.tp-bullets.simplebullets .bullet.selected {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 1) !important;
+    width: 6px !important;
+    height: 6px !important;
+    border: 5px solid rgba(0, 0, 0, 1) !important;
+}
+
+
+
+.tparrows:before {
+    font-family: 'revicons';
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    margin-right: 0;
+    margin-top: 9px;
+    text-align: center;
+    width: 40px;
+    font-size: 20px;
+}
+.tparrows {
+
+    cursor: pointer;
+
+    background: rgba(0, 0, 0, 0.5) !important;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 40px !important;
+    height: 40px !important;
+
+}
+.tparrows:hover {
+    color: #fff;
+}
+.tp-leftarrow:before {
+    content: '\e824';
+}
+.tp-rightarrow:before {
+    content: '\e825';
+}
+.tparrows.tp-rightarrow:before {
+    margin-left: 1px;
+}
+.tparrows:hover {
+    background: rgba(0, 0, 0, 1) !important;
+}
+
+
+
+/******************************
+    -   SLIDER NAV STYLE DEMOS  -
+********************************/
+
+#slider4container .tparrows:before,
+#slider4container .tparrows:hover,
+#slider4container .tparrows {
+    color: #000 !important;
+}
+
+#slider4container .tparrows {
+    background:#fff !important;
+    background:rgba(255,255,255,0.5) !important;
+}
+
+#slider4container .tparrows:hover   {
+    background:#fff !important
+}
+.parallax-container {
+    height: 300px;
+}
+        /****Map****/
+.map {
+    overflow: hidden;
+    padding-top: 1px;
+}
+.map figure {
+    position: relative;
+    display: block;
+    width: 90%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.map figure iframe {
+    width: 100%;
+    height: 399px;
+    max-width: 100%;
+}
+.sobre-parallax {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    z-index: 1300;
+}
+.parallax-container  h2 {
+    color: #f57c00;
+}
+
+
+/**** Cambio de colores para los wabes *******/
+.waves-effect.waves-brown .waves-ripple {
+/* The alpha value allows the text and background color
+of the button to still show through. */
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.waves-effect {
+    color: #000 !important;
+}
+
+/* Estilo para el mapa de google maps */
+.map figure iframe {
+    width: 100%;
+    height: 399px;
+    max-width: 100%;
+}
+
+blockquote {
+    border-left-color: #00695c !important;
+}
+
+.responsive-gallery {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100px;
+}

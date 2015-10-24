@@ -1,0 +1,20 @@
+<!--<div id='gallery' class="row">
+    <div class="col s6 m2">
+        <a href="http://farm6.static.flickr.com/5746/20508830138_a7b6a051c9_b.jpg">
+            <img src="http://farm6.static.flickr.com/5746/20508830138_a7b6a051c9_t.jpg" title="Connected" class="responsive-gallery">
+        </a>
+    </div>
+    <div class="col s6 m2"><a href="http://farm1.static.flickr.com/644/20697268356_c173eb3ebc_b.jpg"><img src="http://farm1.static.flickr.com/644/20697268356_c173eb3ebc_t.jpg" title="A Quiet Evening" class="responsive-gallery"></a></div>
+    <div class="col s6 m2">
+        <a href="http://d3bvl598xc7qos.cloudfront.net/upimg/s330/1f/79/86e41583bd21f1d2fdd647ca99a11f79.jpg">
+            <img src="http://d3bvl598xc7qos.cloudfront.net/upimg/s330/1f/79/86e41583bd21f1d2fdd647ca99a11f79.jpg" class="responsive-gallery">
+        </a>
+    </div>
+</div>-->
+<div id="gallery" class="row">
+    <div class="col s6 m2" ng-repeat="imagen in imegenes">
+        <a href="{{imagen.url}}" title="{{imagen.nombre}}">
+            <img src="{{imagen.url}}" class="responsive-gallery">
+        </a>
+    </div>
+</div>
