@@ -1,21 +1,10 @@
 <section>
-<h1>jnhsdajsdajknsdanj</h1>
-<nav>
-  <ul class="left hide-on-med-and-down">
-    <li><a href="#!">Subir Imagen</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-  </ul>
-  <ul id="slide-out" class="side-nav">
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-</nav>
-<div style="height: 1px;">
-          <ul class="section table-of-contents">
-            <li><a href="#introduction">Introducción</a></li>
-            <li><a href="#initialization" class="active">Initialization</a></li>
-            <li><a href="#options">Opciones</a></li>
-          </ul>
-        </div>
+    <br><br>
+    <h3 ng-if="(!$state.includes( '**.admin.galeria_cms.**')) &&
+               (!$state.includes( '**.admin.banner_cms.**')) &&
+               (!$state.includes( '**.admin.bloog_cms.**'))">
+        Bienvenido al Modulo administrativo.
+    </h3>
+    <div ui-view>
+    </div>
 </section>

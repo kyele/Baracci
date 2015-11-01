@@ -40,6 +40,9 @@
 	.esconder{
 		visibility: hidden;
 	}
+	.mostrar {
+		visibility: visible !important;
+	}
 </style>
 <body ng-app="appVestidos" id="">
 	<!-- HEADER -->
@@ -55,19 +58,21 @@
 							<li><a href="">Servicios</a></li>
 							<!-- Dropdown Trigger -->						
 						</ul>
-						<ul ng-if="!$state.includes( '**.admin.**' )" class="left hide-on-med-and-down">
-							<li><a ui-sref="inicio">Baracci</a></li>
-							<li><a href="">Conocenos</a></li>
-							<li><a href="">Servicios</a></li>
-							<!-- Dropdown Trigger -->						
-						</ul>
-						<a  ng-class="{ letf: $state.includes( '**.admin.**' )}" href="#!" class="brand-logo letf">
+						<a  ng-class="{ letf: $state.includes( '**.admin.**' )}" href="#!" class="brand-logo center">
 							<img src="images/Logotipo.jpg" alt="" class="responsive-img circle baraci-logo">
 						</a>
 						<ul  ng-if="!$state.includes( '**.admin.**' )" class="right hide-on-med-and-down">
 							<li><a ui-sref="contacto">Contacto</a></li>
 							<li><a ui-sref="galeria">Galeria</a></li>
 							<li><a ui-sref="login">Login</a></li>
+							<!-- Dropdown Trigger -->
+						</ul>
+						<ul ng-if="$state.includes( '**.admin.**' )" 
+							class=" esconder center hide-on-med-and-down"
+							ng-class="{ mostrar: $state.includes( '**.admin.**' ) }">
+							<li><a ui-sref="admin.galeria_cms">Galeria</a></li>
+							<li><a ui-sref="admin.bloog_cms">Bloog</a></li>
+							<li><a ui-sref="admin.banner_cms">Banner</a></li>
 							<!-- Dropdown Trigger -->
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
@@ -106,12 +111,18 @@
 
 	<!-- Angular Sanitize -->
 	<script src="bower_resources/angular-sanitize/angular-sanitize.js" type="text/javascript"></script>
+
 	<!-- Angular UI-Router -->
 	<script src="bower_resources/angular-ui-router/release/angular-ui-router.js" type="text/javascript"></script>
+
 	<!-- Angular ngModelOptions -->
 	<script src="bower_resources/ngmodeloptions/ngModelOptions.js" type="text/javascript"></script>
+
 	<!-- ngAnimate -->
 	<script src="bower_resources/angular-animate/angular-animate.js"></script>
+
+	<!-- ngAnimate -->
+	<script src="bower_resources/angular-resource/angular-resource.js"></script>
 
 	<!-- Angular Loading Bar -->
 	<script src="bower_resources/angular-loading-bar/build/loading-bar.js"></script>
@@ -123,6 +134,12 @@
 
 	<!-- App -->
 	<script src="js/appVestidos.js" type="text/javascript"></script>
+
+	<!-- Controllers -->
+	<script src="js/controllers/galeria.controller.js" type="text/javascript"></script>
+
+	<!-- Services -->
+	<script src="js/services/galeria.service.js" type="text/javascript"></script>
 
 	<!--Import jQuery before materialize.js-->
 	<script src="bower_resources/materialize/dist/js/materialize.min.js"></script>

@@ -1,5 +1,5 @@
 angular.module( 'appVestidos' , 
-	[ 'ngSanitize' , 'modelOptions' , 'ui.router', 'angular-loading-bar' , 'ezfb' ] )
+	[ 'ngSanitize' , 'modelOptions' , 'ui.router', 'angular-loading-bar' , 'ezfb' , 'ngResource' ] )
 
 
 .config(
@@ -11,12 +11,13 @@ angular.module( 'appVestidos' ,
 			appId: '1862370520653764',
 			version: 'v2.3'
 		});
-		
+
 		cfpLoadingBarProvider.latencyThreshold = 500;
 
 		$urlRouterProvider.otherwise('/inicio');
 
 		$stateProvider
+
 		//Página Principal
 		.state('inicio', {
 			url: 			'/inicio',
@@ -95,7 +96,7 @@ angular.module( 'appVestidos' ,
 								$scope.mensaje							= undefined;
 								$scope.asunto							= undefined;
 
-								$scope.correo_form.nombre.$pristine		= true;
+								$scope.correo_form.nombre.  $pristine		= true;
 								$scope.correo_form.correo.$pristine		= true;
 								$scope.correo_form.mensaje.$pristine	= true;
 								$scope.correo_form.asunto.$pristine		= true;
@@ -119,6 +120,28 @@ angular.module( 'appVestidos' ,
             url:            '/cms',
             templateUrl:    'views/cms.html',
         })
+            .state('admin.banner_cms', {
+                url:            '/banner',
+                templateUrl:    'views/banner_cms.html',
+            })
+            .state('admin.galeria_cms', {
+                url:            '/galeria',
+                templateUrl:    'views/galeria_cms.html',
+            })
+                .state('admin.galeria_cms.categorias', {
+                    url:            '/categorias',
+                    templateUrl:    'views/categorias.html',
+                })
+                .state('admin.galeria_cms.productos', {
+                    url:            '/Productos',
+                    templateUrl:    'views/productos.html',
+                    controller:     'GaleriaListCtrl',
+                    controllerAs:   'galeria',
+                })
+            .state('admin.bloog_cms', {
+                url:            '/bloog',
+                templateUrl:    'views/bloog_cms.html',
+            })
 	}
 ])
 
@@ -211,78 +234,6 @@ function galeria( $scope ) {
 		}
 
 	];
-    /*var numOfImages = window.location.search ? parseInt(window.location.search.match(/\d+$/)[0]) : 70,
-        gallery = $('#gallery'),
-        videos = [
-            {
-                title: "Victoria's Secret",
-                url: "http://player.vimeo.com/video/8974462?byline=0&portrait=0",
-                thumb: "http://b.vimeocdn.com/ts/432/699/43269900_100.jpg"
-            },
-            {
-                title: "PEOPLE ARE AWESOME 2013 FULL HD ",
-                url: "http://www.youtube.com/embed/W3OQgh_h4U4",
-                thumb: "http://img.youtube.com/vi/W3OQgh_h4U4/0.jpg"
-            },
-            {
-                title: "Biting Elbows - 'Bad Motherfucker' Official Music Video",
-                url: "http://player.vimeo.com/video/62092214?byline=0&portrait=0",
-                thumb: "http://b.vimeocdn.com/ts/431/797/431797120_100.jpg"
-            }
-        ];
-        
-    // Get some photos from Flickr for the demo
-    $.ajax({
-        url: 'https://api.flickr.com/services/rest/',
-        data: {
-            format: 'json',
-            method: 'flickr.interestingness.getList',
-            per_page : numOfImages,
-            api_key: 'b51d3a7c3988ba6052e25cb152aecba2' // this is my own API key, please use yours
-        },
-        dataType: 'jsonp',
-        jsonp: 'jsoncallback'
-    })
-    .done(function (data){
-        var loadedIndex = 1, isVideo;
-        
-        // add the videos to the collection
-        console.log(data);
-        data.photos.photo = data.photos.photo.concat(videos);
-        
-       $.each( data.photos.photo, function(index, photo){
-            isVideo = photo.thumb ? true : false;
-            // http://www.flickr.com/services/api/misc.urls.html
-            var url = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret,
-                img = document.createElement('img');
-            
-            // lazy show the photos one by one
-            img.onload = function(e){
-                img.onload = null;
-                var link = document.createElement('a'),
-                div = document.createElement('div')
-                link.href = this.largeUrl;
-
-                link.appendChild(this);
-                if( this.isVideo ){
-                    link.rel = 'video';
-                    div.className = 'video'
-                }
-                div.appendChild(link);
-                gallery[0].appendChild(div);
-            
-                setTimeout( function(){ 
-                    $(div).addClass('col s6 m2');
-                    $(img).addClass('responsive-gallery');
-                }, 25*loadedIndex++);
-            };
-            
-            img['largeUrl'] = isVideo ? photo.url : url + '_b.jpg';
-            img['isVideo'] = isVideo;
-            img.src = isVideo ? photo.thumb : url + '_t.jpg';
-            img.title = photo.title;
-        });*/
-
         // finally, initialize photobox on all retrieved images
         $('#gallery').photobox('a', { thumbs:true, loop:false }, callback);
         // using setTimeout to make sure all images were in the DOM, before the history.load() function is looking them up to match the url hash
