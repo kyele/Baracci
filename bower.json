@@ -19,6 +19,7 @@
     "materialize": "~0.97.0",
     "slider-revolution": "~4.3.7",
     "photobox": "~1.9.9",
-    "angular-resource": "~1.4.7"
+    "angular-resource": "~1.4.7",
+    "angular-materialize": "*"
   }
 }

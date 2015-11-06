@@ -1,0 +1,48 @@
+<h3>Nuevo Producto</h3>
+<form name="upload" ng-submit="producto.uploadFile()">
+	<div class="row">
+		<div class="input-field col s6">
+          	<i class="material-icons prefix">class</i>
+          	<input id="name_product" type="tel" class="validate" ng-model="producto.nombre_producto">
+          	<label for="name_product">Nombre:</label>
+        </div>
+        <div class="input-field col s6">
+          	<i class="material-icons prefix">settings</i>
+          	<input id="material_product" type="tel" class="validate" ng-model="producto.material_producto">
+          	<label for="material_product">Material del producto:</label>
+        </div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<label for="">
+				<strong>Subir Imagen:</strong>
+			</label>
+			<input id="file" type="file" name="file" uploader-model="producto.file" archivos="producto.imagen"/>
+		</div>
+		<div id="vista_previa" class="col s12">
+	    </div>
+	</div>
+	<p><b>Categorias:</b></p>
+	<div class="row">
+		<div class="col s4" ng-repeat="productos in producto.productos ">
+			<p>
+		      <input ng-click="producto.agrega_categoria(productos.id_categoria_producto)" type="checkbox" id="{{productos.id_categoria_producto}}" />
+		      <label for="{{productos.id_categoria_producto}}">{{productos.nombre_categoria}}</label>
+		    </p>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			<i class="material-icons prefix">assignment</i>
+        	<textarea id="descripcion" class="materialize-textarea" ng-model="producto.descripcion_producto"></textarea>
+          	<label for="descripcion">Descripcion</label>
+        </div>
+	</div>
+	<div class="row">
+		<!--<button class="btn waves-effect waves-light" type="submit" name="action" ng-click="producto.agregar()">
+			Guardar
+    		<i class="material-icons right">send</i>
+  		</button>-->
+  		 <input type="submit" value="Enviar"> 
+	</div>	
+</form>

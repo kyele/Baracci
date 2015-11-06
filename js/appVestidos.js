@@ -1,5 +1,5 @@
 angular.module( 'appVestidos' , 
-	[ 'ngSanitize' , 'modelOptions' , 'ui.router', 'angular-loading-bar' , 'ezfb' , 'ngResource' ] )
+	[ 'ngSanitize' , 'modelOptions' , 'ui.router', 'angular-loading-bar' , 'ezfb' , 'ngResource' , 'ui.materialize' ] )
 
 
 .config(
@@ -125,18 +125,32 @@ angular.module( 'appVestidos' ,
                 templateUrl:    'views/banner_cms.html',
             })
             .state('admin.galeria_cms', {
-                url:            '/galeria',
+                url:            '/Galeria',
                 templateUrl:    'views/galeria_cms.html',
             })
                 .state('admin.galeria_cms.categorias', {
                     url:            '/categorias',
                     templateUrl:    'views/categorias.html',
+                    controller: 	'CategoriasListCtrl',
+                    controllerAs: 	'categoria',
+                })
+                .state('admin.galeria_cms.categoria_alta', {
+                    url:            '/Categorias/Alta',
+                    templateUrl:    'views/categorias_form.html',
+                    controller:     'categoriasCreateCtrl',
+                    controllerAs:   'categoria',
                 })
                 .state('admin.galeria_cms.productos', {
                     url:            '/Productos',
                     templateUrl:    'views/productos.html',
                     controller:     'GaleriaListCtrl',
                     controllerAs:   'galeria',
+                })
+                .state('admin.galeria_cms.productos_alta', {
+                    url:            '/Productos/Alta',
+                    templateUrl:    'views/productos_form.html',
+                    controller:     'ProductosCreateCtrl',
+                    controllerAs:   'producto',
                 })
             .state('admin.bloog_cms', {
                 url:            '/bloog',

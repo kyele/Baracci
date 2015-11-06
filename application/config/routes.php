@@ -55,4 +55,10 @@ $route['translate_uri_dashes']          = FALSE;
 
 
 //Rutas para el ejemplo de galeria
-$route["galeria"]["get"]                  = "galeria/index";
+$route["galeria"]["get"]                = "galeria/index";
+$route["galeria"]["post"]               = "galeria/index";
+
+$route["imagenes"]["post"]              = "imagenes/index";
+
+$route["categorias"]["get"]             = "categorias/index";
+$route["categorias"]["post"]            = "categorias/index";

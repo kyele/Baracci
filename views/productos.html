@@ -1,5 +1,38 @@
-<h1>Productos</h1>
-<div ng-repeat="productos in galeria.galerias ">
-    <!-- <img class="materialboxed" width="650" src="{productos.url_imagen_producto}">   -->
-    <img class="materialboxed" width="190" ng-src="{{productos.url_imagen_producto}}">
+<div class="col s12">
+	<a class="waves-effect waves-light btn right" ui-sref="admin.galeria_cms.productos_alta">
+        <i class="material-icons left">loyalty</i>Agregar Productos
+    </a>
+	<h3>Lista de Productos</h3>
+</div>
+<div class="col s12">
+    <table>
+        <thead>
+			<tr>
+				<th class="center" data-field="id">id</th>
+				<th class="center" data-field="name">Producto</th>
+			  	<th class="center" data-field="material">Material</th>
+			  	<th class="center" data-field="image">imagen</th>
+			  	<th class="center" data-field="edit">Editar</th>
+			</tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="productos in galeria.galerias ">
+            <td class="center">
+            	{{productos.id_producto}}
+            </td>
+            <td class="center">
+            	{{productos.nombre_producto}}
+            </td>
+            <td class="center">
+            	{{productos.material}}
+            </td>
+            <td class="center">
+            	<img class="materialboxed center" width="60" ng-src="{{productos.url_imagen_producto}}">
+            </td>
+            <td class="center">
+            	<a href=""><i class="material-icons medium">assignment_ind</i></a>
+            </td>
+          </tr>
+        </tbody>
+     </table>
 </div>

@@ -1,1 +1,29 @@
-<h1>CATEGORIAS</h1>
+<style>
+	p>a{
+		padding: 10px;
+	}
+</style>
+<div class="col s12">
+	<a class="waves-effect waves-light btn right" ui-sref="admin.galeria_cms.categoria_alta">
+		<i class="material-icons left">loyalty</i>Agregar Categoria
+	</a>
+	<h3>Categorias de productos</h3>
+</div>
+<div class="col s12">
+	<ul class="collapsible" data-collapsible="accordion" watch>
+	    <li ng-repeat="categorias in categoria.categorias">
+	      	<div class="collapsible-header">
+	      		<i class="material-icons">label_outline</i>{{categorias.nombre_categoria}}
+	      	</div>
+	      	<div class="collapsible-body">
+	      		<p>
+	      			<b class="blue-text text-darken-2">Descripción: </b>{{ categorias.descripcion_categoria}}
+	      			<br>	      			
+	      			<a href="" class="right">Editar</i></a>
+	      			<a href="" class="right">Eliminar</a>
+	      			<br>
+	      		</p>
+	      	</div>
+	    </li>
+  </ul>    
+</div>

@@ -12,42 +12,30 @@
 angular.module( 'appVestidos' )
     .service( 'galeriaServices' , galeriaServices );
 galeriaServices.$inject = [ '$resource' ]
-function galeriaServices( $resource , routeServices ) {
+function galeriaServices( $resource  ) {
 
-    var galeria_agregar     = $resource( "http://localhost/Baracci/index.php/galeria/index" , {}, {
-            agregar: {
+    var galeria_agregar     = $resource( "http://localhost/Baracci/index1.php/galeria/index" , {}, {
+            agregar_producto: {
                 method: 'POST'
             }
         }),
-        galeria_list        = $resource( "http://localhost/Baracci/index.php/galeria/index" , {}, {
+        galeria_list        = $resource( "http://localhost/Baracci/index1.php/galeria/index" , {}, {
             listar: {
                 method: 'GET'
             }
         }),
-        galeria_resource   = $resource( "http://localhost/Baracci/index.php/galeria/find/:id_galeria" , {}, {
+        categoria_list      = $resource( "http://localhost/Baracci/index1.php/categorias/index" , {}, {
             mostrar: {
-                method: 'GET',
-                params: {
-                    id_galeria:    '@id_galeria',
-                }
-            },
-            eliminar: {
-                method: 'DELETE',
-                params: {
-                    id_galeria:    '@id_galeria',
-                }
+                method: 'GET'
             }
         }),
-        galeria_edit  = $resource("http://localhost/Baracci/index.php/galeria/index/:id",{id:"@_id"},{
-            modificar: {
-                method: "PUT",
-                params:{
-                    id:"@_id"
-                }
+        categoria_agregar     = $resource( "http://localhost/Baracci/index1.php/categorias/index" , {}, {
+            agregar_categoria: {
+                method: 'POST'
             }
         });
-        return {
-            /**
+    return {
+        /**
         *   this function returns the promise that contains a json
         *   @author     Cesar Herrera <kyele936@gmail.com>
         *   @since      09/10/2015
@@ -57,17 +45,18 @@ function galeriaServices( $resource , routeServices ) {
         *   @param      Callbacks [success]
         *   @param      Callbacks [fail]
         *   @return     promise
-        *   @example    galeriaServices.agregar( {usuario: 'kyele', nombre: '1414', ....} , function( data ){ .... }, function( data ) { .... } )
+        *   @example    galeriaServices.agregar_producto( {usuario: 'kyele', nombre: '1414', ....} , function( data ){ .... }, function( data ) { .... } )
         */
-        agregar: function( galeria , success, fail ) {
-            return galeria_agregar.agregar( galeria ,
+        agregar_producto: function( galeria , success, fail ) {
+            return galeria_agregar.agregar_producto( galeria ,
                 function( data ) {
                     success( data );
                 }, function( data ) {
                     fail( data.data );
                 }
             );
-        },/**
+        },
+        /**
         *   this function returns the promise that contains a json
         *   @author     Cesar Herrera <kyele936@gmail.com>
         *   @since      04/10/2015
@@ -108,22 +97,21 @@ function galeriaServices( $resource , routeServices ) {
                 }
             );
         },
+
         /**
         *   this function returns the promise that contains a json
         *   @author     Cesar Herrera <kyele936@gmail.com>
         *   @since      13/10/2015
         *   @version    1
         *   @access     public
-        *   @param      jsonObject [parametros]
-        *   @param      Callbacks [callback]
+        *   @param      jsonObject [galeria]
+        *   @param      Callbacks [success]
+        *   @param      Callbacks [fail]
         *   @return     promise
-        *   @example    galeriaServices.mostrar( datos_galeria , function( data ){ .... });
+        *   @example    galeriaServices.agregar( {usuario: 'kyele', nombre: '1414', ....} , function( data ){ .... }, function( data ) { .... } )
         */
-        mostrar: function( id_galeria , callback ) {
-            return galeria_resource.mostrar(
-                {
-                    id_galeria: id_galeria,
-                } ,
+        mostrar: function( callback ) {
+            return categoria_list.mostrar(
                 function( data ) {
                     callback( data );
                 }
@@ -132,43 +120,17 @@ function galeriaServices( $resource , routeServices ) {
         /**
         *   this function returns the promise that contains a json
         *   @author     Cesar Herrera <kyele936@gmail.com>
-        *   @since      13/10/2015
+        *   @since      09/10/2015
         *   @version    1
         *   @access     public
-        *   @param      jsonObject [parametros]
-        *   @param      Callbacks [callback]
+        *   @param      jsonObject [galeria]
+        *   @param      Callbacks [success]
+        *   @param      Callbacks [fail]
         *   @return     promise
-        *   @example    galeriaServices.eliminar( datos_galeria , function( data ){ .... });
+        *   @example    galeriaServices.agregar( {usuario: 'kyele', nombre: '1414', ....} , function( data ){ .... }, function( data ) { .... } )
         */
-        eliminar: function( id_galeria , success , fail ) {
-            return galeria_resource.eliminar(
-                {
-                    id_galeria: id_galeria,
-                },
-                function( data ) {
-                    success( data );
-                }, function( data ) {
-                    fail( data.data );
-                }
-            );
-        },
-
-        /**
-        *   this function returns the promise that contains a json
-        *   @author     Cesar Herrera <kyele936@gmail.com>
-        *   @since      13/10/2015
-        *   @version    1
-        *   @access     public
-        *   @param      jsonObject [parametros]
-        *   @param      Callbacks [callback]
-        *   @return     promise
-        *   @example    galeriaServices.recuperar( datos_galeria , function( data ){ .... });
-        */
-        recuperar: function( id_galeria , success, fail ) {
-            return galeria_recuperar.recuperar(
-                {
-                    id_galeria: id_galeria,
-                },
+        agregar_categoria: function( galeria , success, fail ) {
+            return categoria_agregar.agregar_categoria( galeria ,
                 function( data ) {
                     success( data );
                 }, function( data ) {
