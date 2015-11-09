@@ -43,6 +43,13 @@
 	.mostrar {
 		visibility: visible !important;
 	}
+	.slider .indicators .indicator-item {
+		height: 10px !important;
+		width: 10px !important;
+	}
+	.slider .indicators .indicator-item.active{
+		background-color: #000;
+	}
 </style>
 <body ng-app="appVestidos" id="">
 	<!-- HEADER -->
@@ -54,8 +61,8 @@
 						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 						<ul ng-if="!$state.includes( '**.admin.**' )" class="left hide-on-med-and-down">
 							<li><a ui-sref="inicio">Baracci</a></li>
-							<li><a href="">Conocenos</a></li>
-							<li><a href="">Servicios</a></li>
+							<li><a ui-sref="inicio">Conocenos</a></li>
+							<li><a ui-sref="servicios">Servicios</a></li>
 							<!-- Dropdown Trigger -->						
 						</ul>
 						<a  ng-class="{ letf: $state.includes( '**.admin.**' )}" href="#!" class="brand-logo center">
@@ -136,10 +143,17 @@
 	<script src="js/appVestidos.js" type="text/javascript"></script>
 
 	<!-- Controllers -->
-	<script src="js/controllers/galeria.controller.js" type="text/javascript"></script>
+	<script src="js/controllers/productos.controller.js" type="text/javascript"></script>
+	<script src="js/controllers/banners.controller.js" type="text/javascript"></script>
+	<script src="js/controllers/categorias.controller.js" type="text/javascript"></script>
 
 	<!-- Services -->
-	<script src="js/services/galeria.service.js" type="text/javascript"></script>
+	<script src="js/services/productos.service.js" type="text/javascript"></script>
+	<script src="js/services/banners.service.js" type="text/javascript"></script>
+	<script src="js/services/files.service.js" type="text/javascript"></script>
+
+	<!-- Directives -->
+	<script src="js/directives/files.directives.js" type="text/javascript"></script>
 
 	<!--Import jQuery before materialize.js-->
 	<script src="bower_resources/materialize/dist/js/materialize.min.js"></script>
@@ -163,6 +177,9 @@
 		   	$('.collapsible').collapsible({
 		      	accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
 		    });
+		    $('.materialboxed').materialbox();
+		    $('.slider').slider({full_width: true});
+		    $('.slider').slider('start');
 		});
 	</script>
 

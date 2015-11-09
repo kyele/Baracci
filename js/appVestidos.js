@@ -43,6 +43,10 @@ angular.module( 'appVestidos' ,
 		.state('servicios', {
 			url: 			'/servicios',
 			templateUrl: 	'views/servicios.html',
+			controller: 	function() {
+				$('.slider').slider({full_width: true});
+		    	$('.slider').slider('start');
+			}
 		})
 		.state('acceso', {
 			url: 			'/acceso',
@@ -143,7 +147,7 @@ angular.module( 'appVestidos' ,
                 .state('admin.galeria_cms.productos', {
                     url:            '/Productos',
                     templateUrl:    'views/productos.html',
-                    controller:     'GaleriaListCtrl',
+                    controller:     'ProductosListCtrl',
                     controllerAs:   'galeria',
                 })
                 .state('admin.galeria_cms.productos_alta', {

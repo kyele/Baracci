@@ -1,0 +1,40 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+require APPPATH . "/libraries/REST_Controller.php";
+
+	class Banner extends REST_Controller
+	{
+		public function __construct() {
+				parent::__construct();
+				$this->load->model( 'Banner_model' );
+		}
+
+		public function banner_get() {
+
+			$banner = $this->Banner_model->get( );
+
+			if( ! is_null( $banner ) )	{
+				$this->response( array( "response"=>$banner ) , 200 );
+			} else {
+				$this->response( array( "response"=>"no hay  productos" ) , 400);
+			}
+		}
+
+		public function banner_post() {
+			if ( ! $this->post( "banner" ) ) {
+				$this->response( NULL , 404 );
+			} else {
+
+			}
+			$id_banner = $this->Banner_model->save_banner( $this->post( "banner" ) );
+			if ( ! is_null( $id_producto ) ) {
+				//$this->Banner_model->save_categoria_producto(  $array , $id_producto );
+				$this->response( array( "response"=>$id_producto ) , 200) ;
+			} else {
+				$this->response( array( "error"=>"Ha ocurrido un error" ) , 400 );
+			}
+		}
+	}
+
+?>

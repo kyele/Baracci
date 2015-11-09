@@ -16,23 +16,23 @@
 			</tr>
         </thead>
         <tbody>
-          <tr ng-repeat="productos in galeria.galerias ">
-            <td class="center">
-            	{{productos.id_producto}}
-            </td>
-            <td class="center">
-            	{{productos.nombre_producto}}
-            </td>
-            <td class="center">
-            	{{productos.material}}
-            </td>
-            <td class="center">
-            	<img class="materialboxed center" width="60" ng-src="{{productos.url_imagen_producto}}">
-            </td>
-            <td class="center">
-            	<a href=""><i class="material-icons medium">assignment_ind</i></a>
-            </td>
-          </tr>
+            <tr ng-repeat="productos in galeria.galerias" image-boxed>
+                <td class="center">
+                	{{productos.id_producto}}
+                </td>
+                <td class="center">
+                	{{productos.nombre_producto}}
+                </td>
+                <td class="center">
+                	{{productos.material}}
+                </td>
+                <td class="center">
+                	<img class="materialboxed responsive-img" width="60" ng-src="{{productos.url_imagen_producto}}">
+                </td>
+                <td class="center">
+                	<a href=""><i class="material-icons medium">assignment_ind</i></a>
+                </td>
+            </tr>
         </tbody>
      </table>
 </div>
