@@ -44,8 +44,9 @@ angular.module( 'appVestidos' ,
 			url: 			'/servicios',
 			templateUrl: 	'views/servicios.html',
 			controller: 	function() {
-				$('.slider').slider({full_width: true});
-		    	$('.slider').slider('start');
+				/*console.log("sdas");
+				$('.slider').slider('pause');
+				$('.slider').slider({full_width: true});*/
 			}
 		})
 		.state('acceso', {

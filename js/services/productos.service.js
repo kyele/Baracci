@@ -11,25 +11,28 @@
 */
 angular.module( 'appVestidos' )
     .service( 'productosServices' , productosServices );
-productosServices.$inject = [ '$resource' ]
-function productosServices( $resource  ) {
+productosServices.$inject = [ '$resource' , 'routeServices' ]
+function productosServices( $resource , routeServices ) {
 
-    var galeria_agregar     = $resource( "http://localhost/Baracci/index1.php/galeria/index" , {}, {
+    var path_server         = routeServices.PathServer + "index1.php/galeria/index";
+    var path_server_2       = routeServices.PathServer + "index1.php/categorias/index";
+
+    var galeria_agregar     = $resource( path_server , {}, {
             agregar_producto: {
                 method: 'POST'
             }
         }),
-        galeria_list        = $resource( "http://localhost/Baracci/index1.php/galeria/index" , {}, {
+        galeria_list        = $resource( path_server , {}, {
             listar: {
                 method: 'GET'
             }
         }),
-        categoria_list      = $resource( "http://localhost/Baracci/index1.php/categorias/index" , {}, {
+        categoria_list      = $resource( path_server_2 , {}, {
             mostrar: {
                 method: 'GET'
             }
         }),
-        categoria_agregar     = $resource( "http://localhost/Baracci/index1.php/categorias/index" , {}, {
+        categoria_agregar     = $resource( path_server_2 , {}, {
             agregar_categoria: {
                 method: 'POST'
             }

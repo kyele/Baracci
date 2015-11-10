@@ -138,7 +138,7 @@ function ProductosListCtrl( $state , $scope , productosServices ) {
         productosServices.listar(
             function( data ) {
                 //console.log(data.response);
-                if( data.response.length > 0 ) {
+                if( data.response.length != null ) {
                     galeria.galerias = galeria.galerias.concat( data.response );
                     $scope.$parent.noCargar = false;
                 }

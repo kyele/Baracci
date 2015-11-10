@@ -13,9 +13,9 @@
 angular.module( 'appVestidos' )
     .controller( 'categoriasCreateCtrl' , categoriasCreateCtrl );
 
-categoriasCreateCtrl.$inject = [ '$state' , '$scope' , 'galeriaServices' ];
+categoriasCreateCtrl.$inject = [ '$state' , '$scope' , 'productosServices' ];
 
-function categoriasCreateCtrl( $state , $scope , galeriaServices ) {
+function categoriasCreateCtrl( $state , $scope , productosServices ) {
 
     var categoria            = this;
     categoria.datos_form     = {};
@@ -26,7 +26,7 @@ function categoriasCreateCtrl( $state , $scope , galeriaServices ) {
         categoria.datos_form.descripcion        = categoria.descripcion_categoria;
         console.log(categoria.datos_form);
 
-        galeriaServices.agregar_categoria( {categoria:categoria.datos_form} ,
+        productosServices.agregar_categoria( {categoria:categoria.datos_form} ,
             function( data ) {
                 swal("Guardado!", "Se ha guardado correctamente la informacion!", "success");
                 $state.go( 'admin.galeria_cms.categorias' );
@@ -52,9 +52,9 @@ function categoriasCreateCtrl( $state , $scope , galeriaServices ) {
 angular.module( 'appVestidos' )
     .controller( 'CategoriasListCtrl' , CategoriasListCtrl );
 
-CategoriasListCtrl.$inject = [ '$state' , '$scope' , 'galeriaServices' ];
+CategoriasListCtrl.$inject = [ '$state' , '$scope' , 'productosServices' ];
 
-function CategoriasListCtrl( $state , $scope , galeriaServices ) {
+function CategoriasListCtrl( $state , $scope , productosServices ) {
 
     var categoria           = this;
     categoria.categorias    = [];
@@ -70,10 +70,10 @@ function CategoriasListCtrl( $state , $scope , galeriaServices ) {
     *   @example    galeria.agregar( .... )
     */
     categoria.listar = function( ) {
-        galeriaServices.mostrar(
+        productosServices.mostrar(
             function( data ) {
                 console.log( data.response );
-                if( data.response.length > 0 ) {
+                if( data.response && data.response.length > 0 ) {
                     categoria.categorias    = data.response;
                     $scope.$parent.noCargar = false;
                 }

@@ -52,3 +52,29 @@ function imageBoxed() {
         }
     };
 };
+/**
+    *   This controller catch the information of the customers
+    *   @author     Cesar Herrera <kyele936@gmail.com>
+    *   @since      13/02/2015
+    *   @version    1
+    *   @access     public
+    *   @param      Service [$resource]
+    *   @param      Service [$location]
+    *   @param      Service [routeServices]
+    *   @return     
+    *   @example    cliente.listar( .... )
+*/
+angular.module( 'appVestidos' )
+    .directive( 'sliderImage' , sliderImage );
+    imageBoxed.$inject = [];
+
+function sliderImage() {
+    return {
+        // Restrict it to be an attribute in this case
+        restrict: 'A',
+        // responsible for registering DOM listeners as well as updating the DOM
+        link: function() {
+            $('.slider').slider({full_width: true});
+        }
+    };
+};
